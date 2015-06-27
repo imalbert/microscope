@@ -1,17 +1,12 @@
-<head>
-	<title>
-	</title>
-</head>
-
-<body>
+<template name="layout">
 	<div class="container">
 		<header class="navbar">
 			<div class="navbar-inner">
-				<a class="brand" href="/">Blog3rd</a>
+				<a class="brand" href="{{pathFor 'postsList'}}">Blog3rd</a>
 			</div>
 		</header>
 		<div id="main" class="row-fluid">
-			{{> postList}}
+			{{> yield}}
 		</div>
 	</div>
-</body>
+</template>
