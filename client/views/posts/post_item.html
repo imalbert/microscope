@@ -1,7 +1,9 @@
 <template name="postItem">
 	<div class="post">
 		<div class="post-content">
-			<h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3><img class="medium-img" src="{{img}}">
+			<h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
+			<!-- <img class="medium-img" src="{{img}}"> -->
 		</div>
+		<a href="{{pathFor 'postPage'}}" class="discuss btn">Discuss</a>
 	</div>
 </template>
