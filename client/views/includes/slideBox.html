@@ -1,0 +1,17 @@
+<template name="slideBox">
+  {{#ionView}}
+    {{#ionContent}}
+      {{#ionSlideBox}}
+        {{#ionSlide class="light-bg" align="right"}}
+          <h3>Slide {{slideNumber}}</h3>
+        {{/ionSlide}}
+        {{#ionSlide class="dark-bg"}}
+          <h3>Slide {{slideNumber}}</h3>
+        {{/ionSlide}}
+        {{#ionSlide class="positive-bg"}}
+          <h3>Slide {{slideNumber}}</h3>
+        {{/ionSlide}}
+      {{/ionSlideBox}}
+    {{/ionContent}}
+  {{/ionView}}
+</template>

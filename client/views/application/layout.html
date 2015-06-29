@@ -1,6 +1,9 @@
 <template name="layout">
 	<div class="container">
 		{{> header}}
+		{{#ionBody}}
+			{{> slideBox}}
+		{{/ionBody}}	
 		<div id="main" class="row-fluid">
 			{{> yield}}
 		</div>
