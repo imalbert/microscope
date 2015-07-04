@@ -45,7 +45,7 @@ Meteor.methods({
 		}
 
 		var postId = Posts.insert(post);
-		console.log('returning from post method: post inserted is ' + post);
+		console.log('returning from post method: post inserted is ' + postId);
 		return postId;
 	}
 });
