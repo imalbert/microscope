@@ -1,7 +1,3 @@
-// Template.created({
-// 	Session.set('currentPostId', )
-// })
-
 Template.postEdit.helpers({
 	post: function() {
 		return Posts.findOne(Session.get('currentPostId'));
@@ -16,7 +12,7 @@ Template.postEdit.events({
 
 		var postProperties = {
 			url: $(e.target).find('[name=url]').val(),
-			title: $(e.target).find('[name=title]').val
+			title: $(e.target).find('[name=title]').val()
 		};
 
 		Posts.update(currentPostId, {$set: postProperties}, function(error){
