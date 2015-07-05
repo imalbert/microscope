@@ -9,11 +9,19 @@ Template.postSubmit.events({
 		};
 
 		Meteor.call('post', post, function(error, id) {
-			if (error)
-				return alert(error.reason);
+			if (error) {
+				// display the error to the user
+				throwError(error.reason);
+
+				if (error.error === 302)
+					Router.go('postPage', {_id: Posts.findOne({url: post.url})._id});
+			} else {
+				Router.go('postPage', {_id: id});
+			}
 
 		});
 
+		//demonstrate latency compensation
 		Router.go('postsList');
 	}
 })
