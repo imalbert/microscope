@@ -8,6 +8,6 @@ Template.postItem.helpers({
 		return a.hostname;
 	},
 	commentsCount: function() {
-		return Comments.find({postId: this._id}).count();
+		return Posts.findOne({_id: this._id}).commentsCount;
 	}
 });
