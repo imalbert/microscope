@@ -11,3 +11,10 @@ Template.postItem.helpers({
 		return Posts.findOne({_id: this._id}).commentsCount;
 	}
 });
+
+Template.postItem.events({
+	'click .upvote': function(e) {
+		e.preventDefault();
+		Meteor.call('upvote', this._id);
+	}
+});
