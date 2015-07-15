@@ -17,6 +17,9 @@ Template.postItem.helpers({
 		} else {
 			return 'disabled';
 		}
+	},
+	votes: function() {
+		return Posts.findOne({_id: this._id}).votes;
 	}
 });
 
