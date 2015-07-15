@@ -9,11 +9,19 @@ Template.postItem.helpers({
 	},
 	commentsCount: function() {
 		return Posts.findOne({_id: this._id}).commentsCount;
+	},
+	upvotedClass: function() {
+		var userId = Meteor.userId();
+		if (userId && !_.include(this.upvoters, userId)) {
+			return 'btn-primary upvotable';
+		} else {
+			return 'disabled';
+		}
 	}
 });
 
 Template.postItem.events({
-	'click .upvote': function(e) {
+	'click .upvotable': function(e) {
 		e.preventDefault();
 		Meteor.call('upvote', this._id);
 	}
